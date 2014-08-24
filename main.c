@@ -16,14 +16,14 @@ int main(void)
 {
 	inicia_vars();
 	transfiere_mapa(hero_map);
-	hero_val = mapa[hero_x][hero_y];
+//	hero_val = mapa[hero_x][hero_y];
+			accion_tile_hero(hero_x, hero_y);
 	render_mapa();
 
 	while (main_bucle == 1)
 	{
 		gotoxy(1, 18);
-		printf("Loop: %i,%i,%i,%i,%i   \n", contador, hero_map, hero_x, hero_y,
-			   hero_val);
+		printf("Loop: %i,%i,%i,%i,%i   \n", contador, hero_map, hero_x, hero_y,hero_val);
 
 		render_hero(hero_x, hero_y);
 
