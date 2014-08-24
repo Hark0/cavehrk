@@ -18,16 +18,18 @@ int check_direccion(int vista)
 			hero_map = hero_map - 3;
 			transfiere_mapa(hero_map);
 			render_mapa();
+			return respuesta;
 		}
 
-		if (hero_y > 0) // normal
+		if (hero_y > 0)			// normal
 		{
 			respuesta = 1;
-		}
 
-		if (mapa[hero_x][hero_y-1] !=48) // item
-		{
-			respuesta = 0;
+if (mapa[hero_x][hero_y-1]==48)
+{
+respuesta=0;
+}
+			return respuesta;
 		}
 		break;
 
@@ -42,16 +44,18 @@ int check_direccion(int vista)
 			hero_map = hero_map + 3;
 			transfiere_mapa(hero_map);
 			render_mapa();
+			return respuesta;
 		}
 
-		if (hero_y < mapa_al - 1) // normal
+		if (hero_y < mapa_al - 1)	// normal
 		{
 			respuesta = 1;
-		}
 
-		if (mapa[hero_x][hero_y+1] !=48) // item
-		{
-			respuesta = 0;
+if (mapa[hero_x][hero_y+1]==48)
+{
+respuesta=0;
+}
+			return respuesta;
 		}
 		break;
 
@@ -66,16 +70,17 @@ int check_direccion(int vista)
 			hero_map = hero_map - 1;
 			transfiere_mapa(hero_map);
 			render_mapa();
+			return respuesta;
 		}
 
-		if (hero_x > 0) // normal
+		if (hero_x > 0)			// normal
 		{
 			respuesta = 1;
-		}
-
-		if (mapa[hero_x-1][hero_y] !=48) // item
-		{
-			respuesta = 0;
+if (mapa[hero_x-1][hero_y]==48)
+{
+respuesta=0;
+}
+			return respuesta;
 		}
 		break;
 
@@ -90,19 +95,21 @@ int check_direccion(int vista)
 			hero_map = hero_map + 1;
 			transfiere_mapa(hero_map);
 			render_mapa();
+			return respuesta;
 		}
 
-		if (hero_x < mapa_an - 1) // normal
+		if (hero_x < mapa_an - 1)	// normal
 		{
 			respuesta = 1;
-		}
-
-		if (mapa[hero_x+1][hero_y] !=48) // item
-		{
-			respuesta = 0;
+if (mapa[hero_x+1][hero_y]==48)
+{
+respuesta=0;
+}
+			return respuesta;
 		}
 		break;
 	}
+
 	return respuesta;
 }
 
@@ -172,3 +179,4 @@ void accion_teclado(int accion)
 
 	accion_tecla = 0;
 }
+
