@@ -14,3 +14,5 @@ Testing C4Droid...
 q,a,o,p move.
 r reset.
 h end game.
+
+Compiled with C4Droid for Android.
