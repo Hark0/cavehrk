@@ -11,11 +11,6 @@ Testing C4Droid...
 ................
 ........x.x...
 
-123
-456
-789 rooms
-
 q,a,o,p move.
 r reset.
 h end game.
-
