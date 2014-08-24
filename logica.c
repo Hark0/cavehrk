@@ -1,5 +1,16 @@
 /* logica */
 
+void accion_tile_hero(int x, int y)
+{
+	hero_val = mapa[hero_x][hero_y];
+	switch (hero_val)
+	{
+	case 50:
+mapa[hero_x][hero_y]=49;
+		break;
+	}
+}
+
 
 int check_direccion(int vista)
 {
@@ -25,10 +36,10 @@ int check_direccion(int vista)
 		{
 			respuesta = 1;
 
-if (mapa[hero_x][hero_y-1]==48)
-{
-respuesta=0;
-}
+			if (mapa[hero_x][hero_y - 1] == 48)
+			{
+				respuesta = 0;
+			}
 			return respuesta;
 		}
 		break;
@@ -51,10 +62,10 @@ respuesta=0;
 		{
 			respuesta = 1;
 
-if (mapa[hero_x][hero_y+1]==48)
-{
-respuesta=0;
-}
+			if (mapa[hero_x][hero_y + 1] == 48)
+			{
+				respuesta = 0;
+			}
 			return respuesta;
 		}
 		break;
@@ -76,10 +87,10 @@ respuesta=0;
 		if (hero_x > 0)			// normal
 		{
 			respuesta = 1;
-if (mapa[hero_x-1][hero_y]==48)
-{
-respuesta=0;
-}
+			if (mapa[hero_x - 1][hero_y] == 48)
+			{
+				respuesta = 0;
+			}
 			return respuesta;
 		}
 		break;
@@ -101,10 +112,10 @@ respuesta=0;
 		if (hero_x < mapa_an - 1)	// normal
 		{
 			respuesta = 1;
-if (mapa[hero_x+1][hero_y]==48)
-{
-respuesta=0;
-}
+			if (mapa[hero_x + 1][hero_y] == 48)
+			{
+				respuesta = 0;
+			}
 			return respuesta;
 		}
 		break;
@@ -132,7 +143,8 @@ void accion_teclado(int accion)
 		clrscr();
 		inicia_vars();
 		transfiere_mapa(hero_map);
-		hero_val = mapa[hero_x][hero_y];
+		//hero_val = mapa[hero_x][hero_y];
+			accion_tile_hero(hero_x, hero_y);
 		render_mapa();
 		break;
 
@@ -141,8 +153,8 @@ void accion_teclado(int accion)
 		{
 			borra_hero(hero_x, hero_y);
 			hero_y--;
-			hero_val = mapa[hero_x][hero_y];
 			render_hero(hero_x, hero_y);
+			accion_tile_hero(hero_x, hero_y);
 		}
 		break;
 
@@ -151,8 +163,9 @@ void accion_teclado(int accion)
 		{
 			borra_hero(hero_x, hero_y);
 			hero_y++;
-			hero_val = mapa[hero_x][hero_y];
+			// hero_val = mapa[hero_x][hero_y];
 			render_hero(hero_x, hero_y);
+			accion_tile_hero(hero_x, hero_y);
 		}
 		break;
 
@@ -161,8 +174,9 @@ void accion_teclado(int accion)
 		{
 			borra_hero(hero_x, hero_y);
 			hero_x--;
-			hero_val = mapa[hero_x][hero_y];
+			// hero_val = mapa[hero_x][hero_y];
 			render_hero(hero_x, hero_y);
+			accion_tile_hero(hero_x, hero_y);
 		}
 		break;
 
@@ -171,8 +185,9 @@ void accion_teclado(int accion)
 		{
 			borra_hero(hero_x, hero_y);
 			hero_x++;
-			hero_val = mapa[hero_x][hero_y];
+			// hero_val = mapa[hero_x][hero_y];
 			render_hero(hero_x, hero_y);
+			accion_tile_hero(hero_x, hero_y);
 		}
 		break;
 	}
